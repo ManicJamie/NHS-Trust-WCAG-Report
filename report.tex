@@ -8,11 +8,9 @@
 %% it, its source can be found in
 %% /usr/local/share/texmf/tex/latex/mancs/third-rep.cls
 
-\usepackage{url} % typeset URL's sensibly
+\usepackage{hyperref} % typeset URL's sensibly
 
 \usepackage{pslatex} % Use Postscript fonts
-
-%\includeonly{chapter1}
 
 \title{Assessing Accessibility of NHS Trust Websites}
 \author{J. Bloomfield}
@@ -41,7 +39,7 @@
 \begin{document}
 
 \setlength{\headheight}{15pt}
-\addtolength{\topmargin}{-15pt}
+%\addtolength{\topmargin}{-15pt}
 
 \dotitleandabstract\
 
@@ -57,7 +55,7 @@
 \include{chapter6_discussion}
 \include{chapter7_conclusion}
 
-~\cite{Abascal2019ToolsFW} % placeholder to avoid BibTeX compile failure
+~\nocite{Abascal2019ToolsFW} % placeholder to avoid BibTeX compile failure
 
 \bibliography{library}
 

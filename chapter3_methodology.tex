@@ -1,14 +1,54 @@
 \chapter{Methodology}\label{cha:methodology}
 
-\section{Task description}
+% \section{Task description}
 
 \section{Requirements}
+From the list of objectives laid out in Section~\ref{sec: objectives}, the following requirements are derived;
+\begin{enumerate}
+    \item Automatically obtain a list of NHS trust websites
+    \item Use an existing tool to generate a suitable accessibility report
+    \item Create per-trust website analytics based on the accessibility reports
+    \item Create an overall index page to display overall analytics across all trusts
+    \item Document other issues that may obfuscate information or misdirect users
+\end{enumerate}
+A few potential expansion objectives are added in case of work on the initial artefact being completed early.
+\begin{enumerate}
+    \setcounter{enumi}{5} % update according to earlier enumeration length
+    \item Use additional accessibility tooling to attempt to improve Web Content Accessibility Guidelines coverage
+    \item Corroborate accessibility reports with other indicators in mind towards finding potential contributors to low accessibility guideline conformance
+\end{enumerate}
 
-\section{Development}
+\section{Architecture}
 % Including UML and Conceptual!
+The architecture may comprise optionally two or three parts; the frontend website layer that displays results to the user, the middle WCAG report generation layer, and optionally an archival layer that captures snapshots of trust websites over time. This final layer may be removed and replaced with a minimal discovery layer, with URLs being fed directly into the report generation layer. %% make this make more sense once the project is done
 
-\subsection{Architecture}
+\pagebreak
+
+\section{Project Organisation}
+Throughout development progress was tracked using Github Projects, a versatile project tracking tool allowing for current project progress to be visualised using multiple views, one being a Gantt Chart for overall progress monitoring. Dated milestones were used to track progress on different parts of the project and organise rigid targets for the development cycle. Tasks are tracked as issues on the relevant repository, between the project's main repository and this report's own.
+
+\section{MVP}
+A minimum viable product was devised stripping away unnecessary functionality; for this initial product it was decided that a partial coverage of all NHS Trusts would be acceptable, and a minimal crawling layer to only fetch URLs and avoid the need to archive results was used.
+
+\subsection{Crawling}
+
+\subsection{WCAG Tooling}
+
+% Let's start with Lighthouse as it essentially allows us to do the basic checks for free - may move to @axe-core/cli or @axe-core/webdriverjs as an extension
+
+\subsection{Visualisation}
+
+\section{Iteration}
+After the MVP milestone was reached, work then started on improving the project to fulfil the complete set of base requirements.
+
+\subsection{Crawling}
+
+\subsection{WCAG Tooling}
+
+\subsection{Visualisation}
 
 \section{Testing tool output}
 
-\section{Iteration} % todo: check if this is the right place to put this
+\subsection{Determining guideline impact}
+
+\section{Additional improvements}
