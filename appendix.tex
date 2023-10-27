@@ -1,8 +1,11 @@
-\appendix{Appendix}
+\appendix
 
 % Place random stuff, like data dumps from WCAG tooling runs, here
+\chapter{NHS Trust URL corrections}\label{app:trusts}
+\section{Erroneous domains}
+This table details URLs that had to be changed or added manually;
+\input{tables/badURLs.tex}
 
-\section{Identity First Language}
-Throughout this report, identity-first language (eg.\ disabled people rather than people with disabilities) has been used where appropriate. 
-While some writing guides suggest using person-first language instead, including some of the University's own materials, %% cite? 
-some authors in the field suggest the use of person-first language increases stigmatisation of affected groups\cite{Best2022LanguageMT}\cite{Gernsbacher2017identityfirst}
+\section{HTTPS-only}
+This table details URLs using the HTTP protocol, but where the server rejects non-HTTPS requests. This is a minor detail, as most modern browsers automatically use HTTPS when HTTP is rejected, but is still a case of outdated data.
+\input{tables/httpURLs.tex}

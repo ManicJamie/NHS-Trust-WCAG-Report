@@ -24,8 +24,8 @@
 %% Following lines implement header date
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{}  % left head
-\chead{Draft: \today} % centre head
+\lhead{Draft: \today}  % left head
+\chead{} % centre head
 \lfoot{}
 \cfoot{\thepage}
 \rfoot{}
@@ -35,6 +35,9 @@
 \usepackage{listings}
 
 \usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{xurl}
+\usepackage{tabularx}
 
 \begin{document}
 
@@ -55,12 +58,8 @@
 \include{chapter6_discussion}
 \include{chapter7_conclusion}
 
-~\nocite{Abascal2019ToolsFW} % placeholder to avoid BibTeX compile failure
-
 \bibliography{library}
-
 \bibliographystyle{abbrv}       % alpha, plain or abbrv
 
-\appendix
 \include{appendix}
 \end{document}

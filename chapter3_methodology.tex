@@ -1,9 +1,9 @@
-\chapter{Methodology}\label{cha:methodology}
+\chapter{Development}\label{cha:development}
 
 % \section{Task description}
 
-\section{Requirements}
-From the list of objectives laid out in Section~\ref{sec: objectives}, the following requirements are derived;
+\section{Requirements}\label{sec:requirements}
+From the list of objectives laid out in Section~\ref{sec:objectives}, the following requirements are derived;
 \begin{enumerate}
     \item Automatically obtain a list of NHS trust websites
     \item Use an existing tool to generate a suitable accessibility report
@@ -19,18 +19,22 @@ A few potential expansion objectives are added in case of work on the initial ar
 \end{enumerate}
 
 \section{Architecture}
-% Including UML and Conceptual!
-The architecture may comprise optionally two or three parts; the frontend website layer that displays results to the user, the middle WCAG report generation layer, and optionally an archival layer that captures snapshots of trust websites over time. This final layer may be removed and replaced with a minimal discovery layer, with URLs being fed directly into the report generation layer. %% make this make more sense once the project is done
+%% Including UML and Conceptual!
+The architecture may comprise optionally three or four layers; the frontend website layer that displays results to the user, the middle WCAG report generation layer, the crawler layer that finds Trust websites to assess, and optionally an archival layer that captures snapshots of trust websites over time. This final layer will be omitted from the initial prototype and added later during iteration.
 
 \pagebreak
 
 \section{Project Organisation}
-Throughout development progress was tracked using Github Projects, a versatile project tracking tool allowing for current project progress to be visualised using multiple views, one being a Gantt Chart for overall progress monitoring. Dated milestones were used to track progress on different parts of the project and organise rigid targets for the development cycle. Tasks are tracked as issues on the relevant repository, between the project's main repository and this report's own.
+Throughout development progress was tracked using Github Projects, a versatile project tracking tool allowing for current project progress to be visualised using multiple views, one being a Gantt Chart for overall progress monitoring. Dated milestones were used to track progress on different parts of the project and organise rigid targets for the development cycle. Tasks were tracked as issues on the relevant repository, between the project's main repository and this report's own.
 
-\section{MVP}
-A minimum viable product was devised stripping away unnecessary functionality; for this initial product it was decided that a partial coverage of all NHS Trusts would be acceptable, and a minimal crawling layer to only fetch URLs and avoid the need to archive results was used.
+\section{Developing a First Prototype}
+A minimum viable product was devised stripping away unnecessary functionality; for this initial product it was decided that a partial coverage of all NHS Trusts would be acceptable, and a minimal `crawling' layer to only fetch URLs of the home page of each site was used.
 
-\subsection{Crawling}
+\subsection{Scraping and Crawling}
+This project called for two separate entities in the archival layer --{} one scraper to retrieve a list of domains from the NHS' list of trusts~\cite{NHS_Trust_Directory}, and a crawler to explore different pages on a given domain. For the MVP, this latter crawler was omitted, such that only the home page of each Trust website would be assessed. This was in service of completing an initial prototype, with the intent to switch out the backend architecture once the project was working.
+
+This crawler, held under `/site-finder', %%todo: change this listing somehow
+scrapes the NHS' list of trusts~\cite{NHS_Trust_Directory}, obtaining an overall list of URLs. However, this list is out of date, with several trusts on the list having shut down, merged or moved to a new domain. As the number of erroneous URLs is low, rather than find an alternative automated solution manual overrides were added to replace the bad URLs from the scrape with accurate URLs found from Google. These corrections can be found in Appendix~\ref{app:trusts}.
 
 \subsection{WCAG Tooling}
 
@@ -39,7 +43,10 @@ A minimum viable product was devised stripping away unnecessary functionality; f
 \subsection{Visualisation}
 
 \section{Iteration}
-After the MVP milestone was reached, work then started on improving the project to fulfil the complete set of base requirements.
+After the MVP milestone was reached, work then started on improving the project to fulfil the complete set of base requirements\ref{sec:requirements}. Starting with the features that had been dropped for the initial prototype;
+\begin{enumerate}
+    \item 
+\end{enumerate}
 
 \subsection{Crawling}
 
